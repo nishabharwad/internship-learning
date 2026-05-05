@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>Landing Page</title>
+</head>
+<style>
+
+    *{
+        font-family: arial;
+    }
+
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 100px;
+    }
+  
+    .navbar-links{
+        display:flex;
+        list-style: none;
+        gap:30px;
+        
+    }
+
+    .navbar-links a{
+        text-decoration:none;
+        font-size:15px;
+        color:black;
+    }
+
+    .btns{
+        display:flex;
+        gap:10px;
+        align-items:center;
+        gap:30px;
+    }
+
+     .apply{
+    color:white;
+    background-color: rgb(226, 39, 155);
+    border-style:none;
+    padding:10px 25px;
+    border-radius: 5px;
+    font-size:12px;
+    }
+
+     .hero{
+    display: flex;
+    justify-content: space-evenly;
+    }
+
+    .opening{
+    text-align: center;
+    }
+
+
+    .calc{
+    color:rgb(226, 39, 155);
+    border-style:solid;
+    border-color: rgb(226, 39, 155);
+    border-radius:5px;
+    background-color: white;
+    font-size:12px;
+    padding:10px 25px;
+    }
+
+    .title{
+    font-size:50px;
+    font-weight:800;
+    width:400px;
+    text-align: left;
+    margin-bottom:0;
+    line-height:55px;
+    }
+
+    .sub-title{
+    margin-top:25px;
+    color:rgb(110, 109, 109);
+    width:350px;
+    text-align: left;
+    margin-bottom:0;
+    font-size:15px;
+    }
+
+    .buttons{
+    display:flex;
+    gap: 20px;
+    margin-top:30px;
+    text-align: center;
+    }
+
+    .icons{
+    margin-top:180px;
+    display:flex;
+    align-items: center;
+    gap:18px;
+    }
+
+    .freebie{
+    font-size:25px;
+    font-weight:bold;
+    color:rgb(226, 39, 155);
+    margin-top:15px;
+    }
+
+    .begin{
+   line-height:10px;
+   color:rgb(46, 44, 44);
+    }
+
+    .auth{
+        display:flex;
+        align-items: center;
+        gap:20px;
+        margin-top:50px;
+    }
+
+    .profile{
+        width:60px;
+        border-radius: 30px;
+    }
+    .author{
+        font-size:18px;
+        line-height:3px;
+        font-weight: 800;
+        color:rgb(35, 34, 34);
+    }
+    .bio{
+        font-size:14px;
+        color:gray;
+    }
+
+    .socials{
+        margin-top: 20px;
+        display:flex;
+        justify-content:left;
+        gap:50px;
+        font-size:14px;   
+    }
+    .li1 , .li2 {
+        display:flex;
+        flex-direction: column;
+        gap:20px;
+        align-content: center;
+        }
+    .socials a{
+        color:gray;
+    }
+
+
+.container {
+  max-width: 1100px;
+  margin:70px auto;
+  text-align: center;
+}
+
+.features-header h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.features-header p {
+  color: #777;
+  font-size: 14px;
+  max-width: 550px;
+  margin:0 auto 70px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+
+.feature-card {
+  text-align: left;
+  margin:0 auto;
+}
+
+.feature-card img {
+  width: 30px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  margin:0 auto 10px;
+}
+
+.feature-card p {
+  font-size: 13px;
+  color: #777;
+  line-height: 20px;
+  width:150px;
+}
+
+
+.stats {
+  margin:100px auto;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.stats-header h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.stats-header p {
+  color: #777;
+  font-size: 14px;
+  max-width: 450px;
+  margin: 0 auto 50px;
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-left:100px;
+}
+
+.stat-card {
+  text-align:left;
+}
+
+.stat-card h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 1px;
+}
+
+
+.highlight h3 {
+  color: #ff4da6;
+}
+
+</style>
+
+
+
+
+
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav>
+  
+        <div class="logo">
+                <img src="icon1.png" alt="logo">
+        </div>
+
+         <ul class="navbar-links">
+                <li><a href="#">RETAIL</a></li>
+                <li><a href="#">SME</a></li>
+                <li><a href="#">CORPORATE</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">COVID 19</a></li>
+                <li><a href="#">CAMPAIGNS</a></li>
+         </ul>
+
+        <div class="btns">
+
+                <img src="search-line.png" alt="search">
+                <button class="apply">iSERVICE</button>
+       
+        </div>
+     
+   </nav>
+       
+       <!-- HERO SECTION-->
+
+    <section class="hero">
+
+    <div class="opening">
+
+        <p class="title">Chase Your Dream with us</p>
+        <p class="sub-title">The harder you work for something, the greater you'll feel when you achieve it.</p>
+
+        <div class="buttons">
+
+        <button class="apply">APPLY ONLINE</button>
+        <button class="calc">LOAN CALCULATOR</button>
+         
+        </div>
+
+        <div class="icons">
+          
+            <img src="phone-fill.png" alt="telephone">
+            <p>16519 <span style="margin-left:8px;color:gray;">&vert;</span></p>
+            <img src="facebook-fill.png" alt="facebook">
+            <img src="youtube-fill.png" alt="youtube">
+            <img src="linkedin-box-fill.png" alt="linkedin">
+            <img src="instagram-line.png" alt="instagram">
+            
+        </div>
+
+    </div>
+
+    <div class="intro">
+
+        <div class="info">
+
+        <p class="begin" style="font-size:11px;margin-top:40px;">INTRODUCING</p>
+        <p class="freebie">BANKING WEB LANDING PAGE FREEBIE</p>
+        <p class="begin" style="font-size:15px;">Carefully designed screens for your next project</p>
+        <p class="begin" style="font-size:15px;">Support for SVG and your favourite design tool. Completely free for personal use.</p>
+        
+        </div>
+
+            <div class="auth">
+
+                <img class="profile" src="author.jpg" alt="author">
+                <div class="authname">
+                <p class="author">Atiqur Rahaman</p>
+                <p class="bio">Feel free to <a href="mailto:someone@example.com">Knock me</a> for freelance projects </p>
+                </div>
+            </div>
+            
+        <div class="socials">
+            <div class="li1">
+                <div>
+                <img src="dribbble-line.png" alt="dribble">
+                <a href="https://dribbble.com/atiq31416" target="_blank">dribble.com/atiq31416</a>
+                </div>
+                <div>
+                <img src="twitter-fill.png" alt="twitter">
+                <a href="https://x.com/atiq31416" target="_blank">twitter.com/atiq31416</a>
+                </div>
+                <div>
+                <img src="linkedin-line.png" alt="linkedin">
+                <a href="https://www.linkedin.com/in/atiq31416/" target="_blank">linkedin.com/in/atiq31416/</a>
+                </div>
+            </div>
+            <div class="li2">
+                <div>
+                <img src="chrome-line.png" alt="chrome">
+                <a href="https://atiq.info/" target="_blank">www.atiq.info</a>
+                </div>
+                <div>
+                <img src="upwork-fill.png" alt="uplabs">
+                <a href="https://uplabs.com/atiq31416" target="_blank">uplabs.com/atiq31416</a>
+                </div>
+                <div>
+                <img src="telegram-fill.png" alt="telegram">
+                <a href="https://t.me/atiq31416" target="_blank">https://t.me/atiq31416</a>
+                </div>
+            </div>
+        </div>   
+        
+
+    </div>
+
+    </section>
+
+    <!--RANDOM PARAGRAPHS-->
+
+    <section>
+        
+  <div class="container">
+
+    <div class="features-header">
+
+      <h2>Creating Extraordinary Customer Experience</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum eget morbi dignissim eu pharetra consequat montes, sagittis.</p>
+    </div>
+
+    
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <img src="chrome-line.png" alt="icon1">
+        <h3>Integrity</h3>
+        <p>Displaying the highest level of Integrity in the way we conduct our business</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="instagram-line.png" alt="icon2">
+        <h3>Demonstrate</h3>
+        <p>Demonstrating a strong Will to Win in the marketplace</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="linkedin-box-fill.png" alt="icon3">
+        <h3>Diversity</h3>
+        <p>Promoting Diversity in the workplace and community</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="telegram-fill.png" alt="icon4">
+        <h3>Teamwork</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="chrome-line.png" alt="icon5">
+        <h3>Collaboration</h3>
+        <p>Displaying the highest level of Integrity in the way we conduct our business</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="instagram-line.png" alt="icon6">
+        <h3>Technology</h3>
+        <p>Harnessing the power of Technology to deliver better customer experience</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="twitter-fill.png" alt="icon7">
+        <h3>Corporate</h3>
+        <p>Setting the standard for the best Corporate Citizenship</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="telegram-fill.png" alt="icon8">
+        <h3>Digital</h3>
+        <p>Setting the standard for the best Corporate Citizenship</p>
+      </div>
+
+    </div>
+  </div>
+    </section>
+
+
+
+
+<!--stats ??? -->
+
+<section class="stats">
+
+  <div class="wrapper">
+
+    <div class="stats-header">
+      <h2>Our best results for the year</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam, dapibus
+        mattis vel feugiat erat tortor eleifend.</p>
+    </div>
+
+    <div class="stats-grid">
+
+      <div class="stat-card highlight">
+        <h3>57.6 bn</h3>
+        <p>LOAN PORTFOLIO</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>0.95%</h3>
+        <p>CLASSIFIED LOAN PORTFOLIO</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>388.5%</h3>
+        <p>CLASSIFIED LOAN COVERAGE</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>50.4 bn</h3>
+        <p>DEPOSIT</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>6.1 bn</h3>
+        <p>SHAREHOLDERS EQUITY</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>18.51%</h3>
+        <p>CAPITAL ADEQUACY RATIO</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>8.5 bn</h3>
+        <p>MARKET CAPITALIZATION</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>AAA</h3>
+        <p>CREDIT RATING</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+</body>
+</html>
