@@ -1,0 +1,461 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    padding:80px 0;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    font-family:sans-serif;
+}
+
+
+/* header*/
+
+.header{
+    background-image:url(images/pexels-francesco-ungaro-2835436\ 1.png);
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+    color:white;
+}
+
+
+/* navbar*/
+
+.navbar{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:30px;
+}
+
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:30px;
+    align-items: center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+}
+
+.blog-btn{
+    padding:10px 20px;
+    background:white;
+    color:#3f7dfc;
+    border-radius:10px;
+}
+
+
+/* hero */
+
+.hero{
+    text-align:center;
+    margin-top:150px;
+}
+
+.hero h1{
+    font-size:60px;
+}
+
+.hero span{
+    font-weight:100;
+}
+
+.hero p{
+    margin:20px auto;
+    font-size:16px;
+    width:500px;
+    line-height:30px;
+}
+
+
+/* booking section */
+
+.booking-section{
+    margin-top:-120px;
+}
+
+.booking-container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.booking-top{
+    background:white;
+    width:220px;
+    padding:10px;
+    border-radius:20px 20px 0 0;
+    display: flex;
+    justify-content:space-around;
+    
+}
+
+.booking-top button{
+    padding:10px 15px;
+    border-radius:12px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap:3px;
+    font-size: 12px;
+
+
+}
+
+.non-active{
+    background: none;
+}
+.active-tab{
+    background:#e8f1ff;
+    color:black;
+    
+}
+.active-tab img{
+    width:20px;
+}
+.non-active img{
+    width:20px;
+}
+
+/*booking section pt2*/
+
+
+.booking-form{
+    background:white;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    border-radius:0 20px 20px;
+}
+
+.booking-box{
+    border:1px solid rgb(165, 162, 162);
+    padding:20px;
+    border-radius:20px;
+    flex:auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.booking-box button{
+    border-style:dashed;
+    border-width:1px;
+    border-color:gray;
+    color:gray;
+    background: white;
+    border-radius: 30px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.booking-box span{
+    color:gray;
+    font-size:14px;
+    display:flex;
+    gap:5px;
+}
+
+.booking-box img{
+    width:20px;
+}
+.booking-box h3{
+    margin-top:10px;
+}
+
+.search-btn{
+    padding:35px 35px 35px;
+    padding-bottom: 35px;
+    border-radius:40px;
+    background:#4975cd;
+
+}
+
+
+/* section title */
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+
+/* offer tabs */
+
+.offer-tabs,
+.recommend-tabs{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:40px;
+}
+
+.offer-tabs button,
+.recommend-tabs button{
+    padding:10px 20px;
+    border-radius:20px;
+    background:white;
+}
+
+.active-offer{
+    background:#3f7dfc !important;
+    color:white;
+}
+
+
+/* offer cards */
+
+.offers-cards{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.offer-card{
+    background:white;
+    border-radius:20px;
+    width:320px;
+    padding:20px;
+}
+
+.offer-card img{
+    height:250px;
+    border-radius:50px;
+}
+
+.offer-content{
+    padding-top:20px;
+}
+
+.days{
+    color:gray;
+    font-size:14px;
+}
+
+.offer-content h3{
+    margin:10px 0;
+}
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.price-row span{
+    font-size:24px;
+    font-weight:600;
+}
+
+.price-row button{
+    background:#e8f1ff;
+    color:#3f7dfc;
+    padding:10px 15px;
+    border-radius:10px;
+}
+
+
+/* explore section */
+
+.explore-container{
+    display:flex;
+    align-items:center;
+    gap:100px;
+    flex-wrap:wrap;
+}
+
+.explore-image{
+    height:600px;
+    width:400px;
+    border-radius:30px;
+
+}
+
+.explore-text{
+   flex:1;
+}
+
+.explore-text h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.explore-text p{
+    color:gray;
+    width:500px;
+    line-height:25px;
+    margin-bottom:20px;
+    font-size: 16px;
+}
+
+.explore-text button{
+    background:#3f7dfc;
+    color:white;
+    padding:15px 25px;
+    border-radius:10px;
+}
+
+
+/* recommended section */
+
+.recommend-cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.recommend-card{
+    width:250px;
+    background:white;
+    padding:15px;
+    border-radius:20px;
+}
+
+.recommend-card img{
+    height:180px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.recommend-content{
+    padding-top:15px;
+}
+
+.recommend-content p{
+    color:gray;
+    margin-top:5px;
+    display: flex;
+}
+.recommend-content img{
+    width:20px;
+    height:20px;
+}
+
+/* ================= TESTIMONIAL ================= */
+
+.testimonial-container{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.testimonial-card{
+    background:white;
+    width:450px;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    
+}
+
+.testimonial-card p{
+    line-height:1.8;
+    color:gray;
+}
+
+.testimonial-card h4{
+    margin-top:20px;
+}
+
+.testimonial-card img{
+    width:60px;
+    border-radius: 50px;
+
+}
+
+.arrow{
+    display: flex;
+    width:20px;
+    justify-content: center;
+
+}
+/* discount */
+
+.discount-box{
+    width:80%;
+    margin:auto;
+    background-image:url(images/unsplash_Q1p7bh3SHj8.png);
+    background-size:cover;
+    background-position:center;
+    border-radius:40px;
+    padding:100px 20px;
+    text-align:center;
+    color:white;
+}
+
+.discount-box h2{
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+.discount-box button{
+    background:white;
+    color:#3f7dfc;
+    padding:15px 25px;
+    border-radius:10px;
+}
+
+
+/* footer*/
+
+.footer{
+    width:90%;
+    margin:auto;
+    padding:40px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-links{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#222;
+}
+
+
