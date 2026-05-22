@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age calculator</title>
+</head>
+<body>
+
+    <h1>Age calculator</h1>
+    
+    <form>
+        username: <input type="text" id="username">
+        <br><br>
+        
+        full name: <input type="text" id="fullname">
+        <br><br>
+        
+        birth year: <input type="number" id="birthyear">
+        <br><br>
+        
+        <button type="button" onclick="calculateAge()">calculate age</button>
+    </form>
+    
+    <p id="result"></p>
+ 
+    <script>
+
+        function calculateAge() {
+
+            let username = document.getElementById("username").value;
+            let fullname = document.getElementById("fullname").value;
+            let birthyear = document.getElementById("birthyear").value;
+            
+
+            if (username === "" || fullname === "" || birthyear === "") {
+                alert("please fill in all fields ! ");
+                return;
+            }
+            
+            birthyear = Number(birthyear);
+            let currentYear = 2026;
+            let age = currentYear - birthyear;
+            let ageCategory;
+            
+            if (age < 0) 
+            {
+                ageCategory = "invalid birth year";
+            }
+            else if (age < 13) 
+            {
+                ageCategory = "Child";
+            } 
+            else if (age < 20) 
+            {
+                ageCategory = "Teenager";
+            } 
+            else if (age < 65) {
+                ageCategory = "Adult";
+            } 
+            else {
+                ageCategory = "Senior Citizen";
+            }
+        
+            let result = document.getElementById("result");
+            result.innerHTML = "<h2>Your Details:</h2>" + "<p> <strong> Username: </strong> " + username + "</p>" + 
+            "<p> <strong> Name: </strong> " + fullname + "</p>" + "<p> <strong> Age: </strong> " + age + " years </p> " +
+            "<p> <strong> Age Category: </strong> " + ageCategory + "</p>" ;
+        }
+   
+   
+   </script>
+</body>
+</html>
