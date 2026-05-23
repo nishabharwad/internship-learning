@@ -4,33 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>age calculator</title>
+    <style>
+        .page{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(109, 187, 235);
+            padding:20px 20px 50px;
+            max-width: 20%;
+            border-style:solid;
+            border-width: 1px;
+            border-color: rgb(51, 102, 85);
+            border-radius: 20px;
+        }
+
+        .page button{
+            background-color: rgb(133, 170, 199);
+            border: none;
+            border-style: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            padding: 8px 15px 8px;
+        }
+
+    </style>
 </head>
 <body>
-
+    <div class="page">
     <h1>Age calculator</h1>
     
     <form>
-        username: <input type="text" id="username">
-        <br><br>
-        
-        full name: <input type="text" id="fullname">
-        <br><br>
-        
-        birth year: <input type="number" id="birthyear">
-        <br><br>
-        
         <button type="button" onclick="calculateAge()">calculate age</button>
     </form>
-    
+    </div>
     <p id="result"></p>
  
     <script>
 
         function calculateAge() {
 
-            let username = document.getElementById("username").value;
-            let fullname = document.getElementById("fullname").value;
-            let birthyear = document.getElementById("birthyear").value;
+            let username = prompt("enter your username :");
+            let fullname = prompt("enter your full name :");
+            let birthyear = prompt("enter your birth year :");
             
 
             if (username === "" || fullname === "" || birthyear === "") {
@@ -63,9 +79,8 @@
             }
         
             let result = document.getElementById("result");
-            result.innerHTML = "<h2>Your Details:</h2>" + "<p> <strong> Username: </strong> " + username + "</p>" + 
-            "<p> <strong> Name: </strong> " + fullname + "</p>" + "<p> <strong> Age: </strong> " + age + " years </p> " +
-            "<p> <strong> Age Category: </strong> " + ageCategory + "</p>" ;
+            result.innerHTML = "Your Details: <br> Username : " + username + "<br> Name : " + fullname + "<br> Age : " + age +
+             " years <br> Age Category : " + ageCategory;
         }
    
    
