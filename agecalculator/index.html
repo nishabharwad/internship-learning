@@ -49,7 +49,7 @@
             let birthyear = prompt("enter your birth year :");
             
 
-            if (username === "" || fullname === "" || birthyear === "") {
+            if (!username || !fullname || !birthyear ) {
                 alert("please fill in all fields ! ");
                 return;
             }
