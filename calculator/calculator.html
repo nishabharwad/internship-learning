@@ -6,75 +6,58 @@
     <title>Calculator</title>
 </head>
 <body>
-    enter a number : <input type="number" id="n1"> 
+    <h1>Calculator</h1>
+    
+    <input type="number" id="num1" placeholder="Enter first number">
     <br><br>
-    enter a number : <input type="number" id="n2">
+    <input type="number" id="num2" placeholder="Enter second number">
     <br><br>
-    <button id="add" onclick="add()">+</button>
-    <button id="sub" onclick="sub()">-</button>
-    <button id="mul" onclick="mul()">*</button>
-    <button id="div" onclick="div()">/</button>
-    <button id="rem" onclick="rem()">%</button>
-    <br><br>
+    
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')" >/</button>
+    <button onclick="calculate('%')">%</button>
+    
     <p id="ans"></p>
 
-<script>
-  
+    <script>
+        function calculate(operator) 
+        {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+            let result;
+            
+            if(document.getElementById("num1").value === "" || document.getElementById("num2").value === "")
+            {
+                document.getElementById("ans").textContent = `all fields are required`;
+                return;
+            }
+            
+            switch(operator) {
+                case '+':
+                    result = a + b;
+                    break;
+                case '-':
+                    result = a - b;
+                    break;
+                case '*':
+                    result = a * b;
+                    break;
+                case '/':
+                    if (b === 0) {
+                        document.getElementById("ans").textContent = "Error: Cannot divide by zero";
+                        return;
+                    }
+                    result = a / b;
+                    break;
+                case '%':
+                    result = a % b;
+                    break;
+            }
 
-   function add()
-   {
-    let n1=document.getElementById("n1").value;
-    let n2=document.getElementById("n2").value;
-    n1=Number(n1);
-    n2=Number(n2);
-
-    let result=n1+n2;
-    document.getElementById("ans").innerText="here's the result : " + result;
-   }
-
-   function sub()
-   {
-    let n1=document.getElementById("n1").value;
-    let n2=document.getElementById("n2").value;
-    n1=Number(n1);
-    n2=Number(n2);
-
-    let result=n1-n2;
-    document.getElementById("ans").innerHTML="here's the result : " + result;
-   }
-
-   function mul()
-   {
-    let n1=document.getElementById("n1").value;
-    let n2=document.getElementById("n2").value;
-    n1=Number(n1);
-    n2=Number(n2);
-
-    let result=n1*n2;
-    document.getElementById("ans").innerHTML = `here's the result : ${result}`;
-   }
-
-   function div()
-   {
-    let n1=document.getElementById("n1").value;
-    let n2=document.getElementById("n2").value;
-    n1=Number(n1);
-    n2=Number(n2);
-
-    let result=n1/n2;
-    document.getElementById("ans").textContent=`here's the result : ${result}`;
-   }
-
-   function rem()
-   {
-    let n1=document.getElementById("n1").value;
-    let n2=document.getElementById("n2").value;
-    n1=Number(n1);
-    n2=Number(n2);
-
-    let result=n1%n2;
-    document.getElementById("ans").innerHTML=`here's the result : ${result}`;
-   }
-</script>
+            document.getElementById("ans").textContent = `Result: ${result}`;
+        }
+    </script>
 </body>
 </html>
