@@ -4,47 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>age calculator</title>
-    <style>
-        .page{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: rgb(109, 187, 235);
-            padding:20px 20px 50px;
-            max-width: 20%;
-            border-style:solid;
-            border-width: 1px;
-            border-color: rgb(51, 102, 85);
-            border-radius: 20px;
-        }
-
-        .page button{
-            background-color: rgb(133, 170, 199);
-            border: none;
-            border-style: none;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-            border-radius: 20px;
-            padding: 8px 15px 8px;
-        }
-        body{
-            display: flex;
-            justify-content: center;
-            margin:100px auto;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="page">
+
     <h1>Age calculator</h1>
-    
     <form>
         <button type="button" onclick="calculateAge()">calculate age</button>
     </form>
     </div>
     <p id="result"></p>
- 
+    
     <script>
+        let user;
+        let name;
+        let year;
 
         function calculateAge() {
 
@@ -58,16 +33,29 @@
                 return;
             }
             
-            birthyear = Number(birthyear);
-            let currentYear = 2026;
-            let age = currentYear - birthyear;
+            const alpha=/^[A-Za-z ]+$/
+
+            if(!username.match(alpha) || !fullname.match(alpha))
+            {
+                alert("username or full should only include letters")
+                return;
+            }
+            
+            user=username;
+            name=fullname;
+            year = Number(birthyear);
+            const currentYear = new Date().getFullYear();
+            let age = currentYear - year;
+
+            if(isNaN(year) || age < 0 || age > 120)
+            {
+                alert("enter a valid year");
+                return;
+            }
+
             let ageCategory;
             
-            if (age < 0) 
-            {
-                ageCategory = "invalid birth year";
-            }
-            else if (age < 13) 
+            if (age < 13) 
             {
                 ageCategory = "Child";
             } 
@@ -82,11 +70,12 @@
                 ageCategory = "Senior Citizen";
             }
         
-            let result = document.getElementById("result");
-            result.innerHTML = "Your Details: <br> Username : " + username + "<br> Name : " + fullname + "<br> Age : " + age +
-             " years <br> Age Category : " + ageCategory;
+            document.getElementById("result").innerHTML=`<strong> Your Details </strong> <br><br>
+            <strong> Username : </strong> ${user} <br> 
+            <strong> Name : </strong> ${name} <br> 
+            <strong> Age : </strong> ${age} years <br> 
+            <strong> Age Category : </strong> ${ageCategory}` ;
         }
-   
    
    </script>
 </body>
