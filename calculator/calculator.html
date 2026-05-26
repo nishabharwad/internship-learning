@@ -8,56 +8,91 @@
 <body>
     <h1>Calculator</h1>
     
-    <input type="number" id="num1" placeholder="Enter first number">
+    <button onclick="reset(); numbers()">enter numbers</button>
     <br><br>
-    <input type="number" id="num2" placeholder="Enter second number">
-    <br><br>
-    
     <button onclick="calculate('+')">+</button>
     <button onclick="calculate('-')">-</button>
     <button onclick="calculate('*')">*</button>
-    <button onclick="calculate('/')" >/</button>
+    <button onclick="calculate('/')">/</button>
     <button onclick="calculate('%')">%</button>
+    <br><br>
     
     <p id="ans"></p>
-
+ 
     <script>
-        function calculate(operator) 
-        {
-            let a = Number(document.getElementById("num1").value);
-            let b = Number(document.getElementById("num2").value);
-            let result;
+        let n1;
+        let n2;
+        
+
+        function numbers() {
+           
             
-            if(document.getElementById("num1").value === "" || document.getElementById("num2").value === "")
-            {
-                document.getElementById("ans").textContent = `all fields are required`;
+            
+            // make user enter values
+            let a = prompt("enter a : ");
+            let b = prompt("enter b : ");
+ 
+            // this shows up when the user doesn't enter values. ==="" for empty strings and === null for when the user clicks on cancel. can't use !a because if the enters 0, it will display "all fields are required" even though 0 is a valid number
+            if (a === "" || b === "" || a=== null || b=== null) {
+                alert("all fields are required");
                 return;
             }
-            
+ 
+            // Convert the values into numbers
+            n1 = Number(a);
+            n2 = Number(b);
+ 
+            // if the entered values are not numbers, it will display this.
+            if (isNaN(n1) || isNaN(n2)) {
+                alert("Please enter only numbers");
+                return;
+            }
+        }
+ 
+        function calculate(operator) {
+            // Check if values were entered first
+            if (n1 === undefined || n2 === undefined) {
+                alert("Please enter numbers first!");
+                return;
+            }
+ 
+            let result;
+ 
             switch(operator) {
                 case '+':
-                    result = a + b;
+                    result = n1 + n2;
                     break;
                 case '-':
-                    result = a - b;
+                    result = n1 - n2;
                     break;
                 case '*':
-                    result = a * b;
+                    result = n1 * n2;
                     break;
                 case '/':
-                    if (b === 0) {
+                    if (n2 === 0) 
+                    {
                         document.getElementById("ans").textContent = "Error: Cannot divide by zero";
                         return;
                     }
-                    result = a / b;
+                    result = n1 / n2;
                     break;
                 case '%':
-                    result = a % b;
+                    result = n1 % n2;
                     break;
             }
 
-            document.getElementById("ans").textContent = `Result: ${result}`;
+            document.getElementById("ans").textContent=`${n1} ${operator} ${n2} = ${result}`;
         }
+        function reset()
+        {
+            if(n1 !== undefined || n2 !== undefined)
+            {
+                document.getElementById("ans").textContent ="";
+            }
+        }
+    
+        
+        
     </script>
 </body>
 </html>
