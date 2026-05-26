@@ -11,6 +11,15 @@
 
     <h1>Age calculator</h1>
     <form>
+        <label for="username">username :</label> 
+        <input type="text" id="username" placeholder="enter your username" required>
+        <br><br>
+        <label for="fullname">full name :</label>
+        <input type="text" id="fullname" placeholder="enter your full name" required>
+        <br><br>
+        <label for="birthyear">birth year :</label>
+        <input type="number" id="birthyear" placeholder="YYYY" required>
+        <br><br>
         <button type="button" onclick="calculateAge()">calculate age</button>
     </form>
     </div>
@@ -23,12 +32,12 @@
 
         function calculateAge() {
 
-            let username = prompt("enter your username :");
-            let fullname = prompt("enter your full name :");
-            let birthyear = prompt("enter your birth year :");
+            let username = document.getElementById("username").value;
+            let fullname = document.getElementById("fullname").value;
+            let birthyear = document.getElementById("birthyear").value;
             
-
-            if (!username || !fullname || !birthyear ) {
+            if (!username || !fullname || !birthyear ) 
+            {
                 alert("please fill in all fields ! ");
                 return;
             }
@@ -75,6 +84,10 @@
             <strong> Name : </strong> ${name} <br> 
             <strong> Age : </strong> ${age} years <br> 
             <strong> Age Category : </strong> ${ageCategory}` ;
+
+            document.getElementById("username").value = "";
+            document.getElementById("fullname").value = "";
+            document.getElementById("birthyear").value = "";
         }
    
    </script>
