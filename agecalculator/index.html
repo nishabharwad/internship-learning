@@ -12,13 +12,13 @@
     <h1>Age calculator</h1>
     <form>
         <label for="username">username :</label> 
-        <input type="text" id="username" placeholder="enter your username" required>
+        <input type="text" onclick="cleardetails()" id="username" placeholder="enter your username" required>
         <br><br>
         <label for="fullname">full name :</label>
-        <input type="text" id="fullname" placeholder="enter your full name" required>
+        <input type="text" onclick="cleardetails()" id="fullname" placeholder="enter your full name" required>
         <br><br>
         <label for="birthyear">birth year :</label>
-        <input type="number" id="birthyear" placeholder="YYYY" required>
+        <input type="number" onclick="cleardetails()" id="birthyear" placeholder="YYYY" required>
         <br><br>
         <button type="button" onclick="calculateAge()">calculate age</button>
     </form>
@@ -26,14 +26,15 @@
     <p id="result"></p>
     
     <script>
-        let user;
-        let name;
-        let year;
+        function cleardetails()
+        {
+            document.getElementById("result").innerHTML=``;
+        }
 
         function calculateAge() {
 
-            let username = document.getElementById("username").value;
-            let fullname = document.getElementById("fullname").value;
+            const username = document.getElementById("username").value.trim();
+            const fullname = document.getElementById("fullname").value.trim();
             let birthyear = document.getElementById("birthyear").value;
             
             if (!username || !fullname || !birthyear ) 
@@ -44,19 +45,17 @@
             
             const alpha=/^[A-Za-z ]+$/
 
-            if(!username.match(alpha) || !fullname.match(alpha))
+            if(!fullname.match(alpha))
             {
-                alert("username or full name should only include letters")
+                alert("full name should only include letters")
                 return;
             }
             
-            user=username;
-            name=fullname;
-            year = Number(birthyear);
+            birthyear = Number(birthyear);
             const currentYear = new Date().getFullYear();
-            let age = currentYear - year;
+            const age = currentYear - birthyear;
 
-            if(isNaN(year) || age < 0 || age > 120)
+            if(isNaN(birthyear) || age < 0 || age > 120)
             {
                 alert("enter a valid year");
                 return;
@@ -72,16 +71,18 @@
             {
                 ageCategory = "Teenager";
             } 
-            else if (age < 65) {
+            else if (age < 65) 
+            {
                 ageCategory = "Adult";
             } 
-            else {
+            else 
+            {
                 ageCategory = "Senior Citizen";
             }
         
             document.getElementById("result").innerHTML=`<strong> Your Details </strong> <br><br>
-            <strong> Username : </strong> ${user} <br> 
-            <strong> Name : </strong> ${name} <br> 
+            <strong> Username : </strong> ${username} <br> 
+            <strong> Name : </strong> ${fullname} <br> 
             <strong> Age : </strong> ${age} years <br> 
             <strong> Age Category : </strong> ${ageCategory}` ;
 
