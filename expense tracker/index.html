@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+
+        h1 
+        {
+            margin-top: 25px;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }        
+
+        form
+        {
+            font-family: arial;
+            background-color: rgb(109, 180, 221);
+            margin: 15vh auto;
+            padding:30px;
+            max-width:400px;
+            border-radius:25px;
+            min-height: 420px;
+          
+        }
+       
+        .fields 
+        {
+            display: flex;
+            flex-direction: column;
+            gap:5px;            
+            margin-bottom: 15px; 
+        }
+
+        input, select 
+        {
+            padding:8px 8px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button 
+        {
+            padding:10px 10px 10px;
+            background-color: rgb(51, 97, 138);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            align-self: center;
+        }
+
+    
+        label
+        {
+            color:white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        p
+        {
+        color:red;
+        margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    
+    
+    <form>
+        <h1>Expense Tracker</h1>
+        <div class="fields">
+            <label for="title">Expense Title : </label>
+            <input type="text" id="title" placeholder="Enter an expense title">
+        </div>
+        <div class="fields">
+            <label for="amount">Expense Amount : </label>
+            <input type="number" step="any" id="amount" placeholder="Enter an expense amount">
+        </div>
+        <div class="fields">  
+            <label for="category">Choose an expense category : </label>
+            <select id="category" name="expensecategory">
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="shopping">Shopping</option>
+                <option value="bills">Bills</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="health">Health</option>
+            </select>
+        </div>
+        <div class="fields">
+            <button type="button" onclick="addexpense()">Add Expense</button>
+            <p id="error"></p>
+        </div>
+    </form>
+
+    <script>
+
+        function addexpense()
+        {
+
+            let title=document.getElementById("title").value.trim();
+            let amount=Number(document.getElementById("amount").value.trim());
+            let category=document.getElementById("category").value;
+
+            if(!title || !amount)
+                {
+                    document.getElementById("error").textContent="all fields are required"; 
+                    return
+                }
+                    document.getElementById("error").textContent = ""; 
+                    
+    
+            
+        }
+      
+    </script>
+
+</body>
+</html>
