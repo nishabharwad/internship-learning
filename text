@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
     <style>
-
+ 
+        body
+        {
+            background-color: rgb(30, 60, 90);
+            font-family: arial;
+            margin: 0;
+            padding: 0;
+        }
+ 
         h1 
         {
             margin-top: 25px;
@@ -13,12 +21,12 @@
             color: white;
             text-align: center;
         }        
-
+ 
         form
         {
             font-family: arial;
             background-color: rgb(109, 180, 221);
-            margin: 15vh auto;
+            margin: 15vh auto 20px auto;
             padding:30px;
             max-width:400px;
             border-radius:25px;
@@ -33,7 +41,7 @@
             gap:5px;            
             margin-bottom: 15px; 
         }
-
+ 
         input, select 
         {
             padding:8px 8px;
@@ -41,7 +49,7 @@
             border-radius: 4px;
             font-size: 16px;
         }
-
+ 
         button 
         {
             padding:10px 10px 10px;
@@ -53,7 +61,7 @@
             font-size: 16px;
             align-self: center;
         }
-
+ 
     
         label
         {
@@ -61,13 +69,14 @@
             font-weight: bold;
             font-size: 18px;
         }
-
+ 
         p
         {
             color:red;
             margin-bottom: 0;
         }
-
+ 
+        /* ── Expense List Section ── */
         #expense-section
         {
             max-width: 700px;
@@ -157,12 +166,11 @@
         .bills         { background-color: #c0392b; }
         .entertainment { background-color: #27ae60; }
         .health        { background-color: #16a085; }
+ 
     </style>
 </head>
 <body>
-
-    
-    
+ 
     <form>
         <h1>Expense Tracker</h1>
         <div class="fields">
@@ -189,7 +197,8 @@
             <p id="error"></p>
         </div>
     </form>
-
+ 
+    <!-- Expense List Section (hidden until first expense is added) -->
     <div id="expense-section" style="display:none;">
         <h2>My Expenses</h2>
         <p id="no-expense-msg" style="display:none;">No expenses added yet.</p>
@@ -204,7 +213,7 @@
                 </tr>
             </thead>
             <tbody id="expense-body">
-                
+                <!-- Expense rows go here -->
             </tbody>
             <tfoot>
                 <tr class="total-row">
@@ -215,10 +224,13 @@
             </tfoot>
         </table>
     </div>
-
+ 
     <script>
-
+ 
+        // Array to store all expense objects
         let expenses = [];
+ 
+        // Counter to give each expense a unique id
         let expenseCounter = 0;
  
         function addexpense()
@@ -227,6 +239,7 @@
             let amount = Number(document.getElementById("amount").value.trim());
             let category = document.getElementById("category").value;
  
+            // Validation (your original logic kept exactly)
             if (!title || !amount || amount < 0)
             {
                 document.getElementById("error").textContent = "all fields are required";
@@ -235,6 +248,7 @@
  
             document.getElementById("error").textContent = "";
  
+            // Create an expense object using Object concept
             let newExpense = {
                 id       : expenseCounter,
                 title    : title,
@@ -244,18 +258,20 @@
  
             expenseCounter = expenseCounter + 1;
  
+            // Push the new expense into the array
             expenses.push(newExpense);
  
+            // Clear inputs (your original line kept)
             document.getElementById("title").value  = "";
             document.getElementById("amount").value = "";
  
-            
+            // Re-render the table
             renderTable();
         }
  
         function deleteExpense(id)
         {
-    
+            // Loop through expenses array and find the index with matching id
             let indexToDelete = -1;
  
             for (let i = 0; i < expenses.length; i++)
@@ -267,7 +283,7 @@
                 }
             }
  
-           
+            // Remove that one item using splice
             if (indexToDelete !== -1)
             {
                 expenses.splice(indexToDelete, 1);
@@ -290,7 +306,7 @@
  
         function getCategoryLabel(category)
         {
-
+            // Use a switch to return a readable label
             switch (category)
             {
                 case "food"          : return "Food";
@@ -310,8 +326,10 @@
             const noMsg   = document.getElementById("no-expense-msg");
             const totalEl = document.getElementById("total-amount");
  
+            // Clear existing rows
             tbody.innerHTML = "";
  
+            // Show or hide the whole section
             if (expenses.length === 0)
             {
                 section.style.display = "none";
@@ -320,7 +338,8 @@
  
             section.style.display = "block";
             noMsg.style.display   = "none";
-
+ 
+            // Build a row for each expense using template literals
             for (let i = 0; i < expenses.length; i++)
             {
                 let exp = expenses[i];
@@ -344,12 +363,12 @@
                 tbody.appendChild(row);
             }
  
+            // Update total
             let total = calcTotal();
             totalEl.textContent = `₹${total.toFixed(2)}`;
         }
       
-      
     </script>
-
+ 
 </body>
 </html>
