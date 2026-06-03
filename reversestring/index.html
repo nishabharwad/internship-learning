@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse a string</title>
+</head>
+<body>
+    <p id="rs"></p>
+    <script>
+        const str="javascript";
+        function rev(str)
+        {
+            let revstr="";
+            for(let i=str.length-1 ; i>=0 ; i--)
+        {
+            revstr= revstr + str[i];
+        }
+            
+        document.getElementById("rs").innerHTML=`original string : ${str} <br> reversed string : ${revstr}`;
+        }
+        rev(str);
+    </script>
+    
+</body>
+</html>
