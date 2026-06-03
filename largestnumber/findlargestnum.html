@@ -9,15 +9,17 @@
         <p id="ln"></p>
     <script>
         const arr=[10,20,30,40,50];
-        function large(arr)
-            {
-                
-                let largenum=0;
-                arr.forEach(ele => { if (ele>largenum) { largenum=ele; }});
-                
-                document.getElementById("ln").textContent=`here's the largest number : ${largenum}`;
-            }
-        large(arr);
+        document.getElementById("ln").textContent="here's the largest number :" + arr.reduce((largest, current) => { 
+            if (current>largest)
+        {
+            return current;
+        }
+            else
+        {
+            return largest;
+        }
+        } , 0 );
+
     </script>
 
 </body>
