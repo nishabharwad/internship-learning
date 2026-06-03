@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find largest number from an array</title>
+</head>
+<body>
+        <p id="ln"></p>
+    <script>
+        const arr=[10,20,30,40,50];
+        function large(arr)
+            {
+                
+                let largenum=0;
+                arr.forEach(ele => { if (ele>largenum) { largenum=ele; }});
+                
+                document.getElementById("ln").textContent=`here's the largest number : ${largenum}`;
+            }
+        large(arr);
+    </script>
+
+</body>
+</html>
+
+
+
