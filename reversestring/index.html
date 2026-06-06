@@ -7,19 +7,15 @@
 </head>
 <body>
     <p id="rs"></p>
+    <p id="newrs"></p>
     <script>
-        const str="javascript";
-        function rev(str)
-        {
-            let revstr="";
-            for(let i=str.length-1 ; i>=0 ; i--)
-        {
-            revstr= revstr + str[i];
-        }
-            
-        document.getElementById("rs").innerHTML=`original string : ${str} <br> reversed string : ${revstr}`;
-        }
-        rev(str);
+        const str= (strval) => strval.split("").reverse().join("");
+        document.getElementById("rs").textContent=str("javascript");
+
+        const newstr="hello world !";
+        const newrevstr=newstr.split("").reverse().join("");
+        document.getElementById("newrs").innerHTML=`original string= ${newstr} <br> reversed string= ${newrevstr}`;
+
     </script>
     
 </body>
