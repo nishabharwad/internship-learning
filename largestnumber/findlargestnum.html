@@ -6,20 +6,11 @@
     <title>find largest number from an array</title>
 </head>
 <body>
-        <p id="ln"></p>
+    <p id="largestnumber"></p>
     <script>
-        const arr=[10,20,30,40,50];
-        document.getElementById("ln").textContent="here's the largest number :" + arr.reduce((largest, current) => { 
-            if (current>largest)
-        {
-            return current;
-        }
-            else
-        {
-            return largest;
-        }
-        } , 0 );
-
+        const arr=[0,-20,-30,-40,-50];
+        const largestnum=Math.max(...arr);
+        document.getElementById("largestnumber").textContent=`largest number : ${largestnum}`;
     </script>
 
 </body>
