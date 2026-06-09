@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find duplicates from an array</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        const arr=[10,20,10,20,30,40,30];
+        const unique=new Set();
+        const duplicate=[];
+        arr.forEach((element)=> { if (unique.has(element)) { duplicate.push(element) } else { unique.add(element)} });
+        document.getElementById("display").innerHTML=`original array : ${arr} <br> duplicate values : ${duplicate}`;
+    </script>
+</body>
+</html>
