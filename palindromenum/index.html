@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find palindrome number</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        const findpalindrome = (check) => { const copy = check.toString().split("").reverse().join(""); return (copy==check) ? "it is palindrome" : "it is not palindrome" } ;
+        document.getElementById("display").textContent= findpalindrome("racecar");
+    </script>
+</body>
+</html>
