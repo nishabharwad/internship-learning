@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        const arr=[10,20,60,30,10,20,30,40,50,100,200,250];
+        const newarr=Array.from(new Set(arr)).sort(function(a,b){return a-b}).at(-2);   
+        document.getElementById("display").textContent=`second largest number : ${newarr}`; 
+    </script>
+</body>
+</html>
