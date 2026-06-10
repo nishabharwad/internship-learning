@@ -1,0 +1,156 @@
+ h1 
+        {
+            margin-top: 25px;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }        
+
+        form
+        {
+            font-family: arial;
+            background-color: rgb(109, 180, 221);
+            margin: 15vh auto;
+            padding:30px;
+            max-width:400px;
+            border-radius:25px;
+            min-height: 420px;
+          
+        }
+       
+        .fields 
+        {
+            display: flex;
+            flex-direction: column;
+            gap:5px;            
+            margin-bottom: 15px; 
+        }
+
+        input, select 
+        {
+            padding:8px 8px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button 
+        {
+            padding:10px 10px 10px;
+            background-color: rgb(51, 97, 138);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            align-self: center;
+        }
+
+    
+        label
+        {
+            color:white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        p
+        {
+            color:red;
+            margin-bottom: 0;
+        }
+
+        #expense-section
+        {   
+            display:none;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            background-color: rgb(109, 180, 221);
+            border-radius: 25px;
+            padding: 25px 30px;
+        }
+ 
+        #expense-section h2
+        {
+            color: white;
+            text-align: center;
+            margin-top: 0;
+            font-size: 24px;
+        }
+ 
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+ 
+        thead tr
+        {
+            background-color: rgb(51, 97, 138);
+            color: white;
+        }
+ 
+        th, td
+        {
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 15px;
+        }
+ 
+        tbody tr
+        {
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+ 
+        tbody tr:nth-child(even)
+        {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+ 
+        .delete-btn
+        {
+            background-color: rgb(190, 50, 50);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+ 
+        .total-row
+        {
+            background-color: rgb(51, 97, 138) !important;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .total-row #total
+        {
+            text-align: right;
+        }
+        #no-expense-msg
+        {
+            color: white;
+            text-align: center;
+            font-size: 16px;
+        }
+ 
+        .category-badge
+        {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+        }
+ 
+        .food          { background-color: #e67e22; }
+        .travel        { background-color: #2980b9; }
+        .shopping      { background-color: #8e44ad; }
+        .bills         { background-color: #c0392b; }
+        .entertainment { background-color: #27ae60; }
+        .health        { background-color: #16a085; }
