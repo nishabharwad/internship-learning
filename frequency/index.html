@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="show"></p>
+
+    <script>
+        const str="yoyoyoyoyoy";
+        const count={};
+        for (const letter of str)
+    {
+        count[letter] = (count[letter] ?? 0) + 1;
+    }
+     let display="";
+     for (const [letter,frequency] of Object.entries(count))
+     {
+        display += letter + " : " + frequency + "<br>";
+     }
+
+     document.getElementById("show").innerHTML=display;
+
+    </script>
+</body>
+</html>
