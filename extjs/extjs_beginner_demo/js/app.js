@@ -14,6 +14,7 @@ Ext.onReady(function() {
         height: 200,
         closable: true,
         modal: true,
+        closeAction: 'hide',
         items: [
             new Ext.Button({
                 text: 'ok',
