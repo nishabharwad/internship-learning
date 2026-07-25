@@ -4,6 +4,10 @@ Ext.onReady(function() {
         text: 'Open Window',
         renderTo: Ext.getBody(),
         handler: function() {
+
+            console.log('hidden:', myWindow.hidden);
+            console.log('manager:', myWindow.manager);
+    
             myWindow.show();
         }
     });
@@ -15,6 +19,7 @@ Ext.onReady(function() {
         closable: true,
         modal: true,
         closeAction: 'hide',
+        manager: Ext.WindowMgr,
         items: [
             new Ext.Button({
                 text: 'ok',
@@ -25,10 +30,13 @@ Ext.onReady(function() {
             new Ext.Button({
                 text: 'Close',
                 handler: function() {
-                    myWindow.close();
+                    myWindow.hide();
                 }
             })
         ]
     });
 
 });
+
+
+
