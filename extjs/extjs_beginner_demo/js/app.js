@@ -1,25 +1,20 @@
 Ext.onReady(function() {
 
     var openBtn = new Ext.Button({
-        text: 'Open Window',
+        text: 'click here to open the window',
         renderTo: Ext.getBody(),
         handler: function() {
-
-            console.log('hidden:', myWindow.hidden);
-            console.log('manager:', myWindow.manager);
-    
             myWindow.show();
         }
     });
 
     var myWindow = new Ext.Window({
-        title: 'window',
+        title: 'this is a window',
         width: 300,
         height: 200,
         closable: true,
         modal: true,
         closeAction: 'hide',
-        manager: Ext.WindowMgr,
         items: [
             new Ext.Button({
                 text: 'ok',
