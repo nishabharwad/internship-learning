@@ -27,9 +27,10 @@ Ext.onReady(function() {
     userStore.load({
         callback: function(){
            
+            userStore.sort('name', 'DESC' )
             while (userStore.getCount()>6)
             {
-                 userStore.sort('name', 'DESC' )
+             
                 userStore.removeAt(6);
             }
         }
