@@ -17,10 +17,10 @@ Ext.onReady(function() {
             { header: 'Website', dataIndex: 'website', width: 150 }
         ],
         renderTo: 'grid-container',
-        width: 700,
-        height: 320,
+        width: 660,
+        height: 280,
         loadMask: true,   
-        stripeRows: true  
+        stripeRows: true 
     });
 
     userStore.load();
