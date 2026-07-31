@@ -26,14 +26,19 @@ Ext.onReady(function() {
 
     userStore.load({
         callback: function(){
+            
            
             userStore.sort('name', 'DESC' )
+
+            userStore.filterBy( function(record) {
+                    return record.get('website').indexOf('.') !== -1;
+            });
+
             while (userStore.getCount()>6)
             {
              
                 userStore.removeAt(6);
             }
-        }
-    });
+    }});
 
 });
