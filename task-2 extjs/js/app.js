@@ -23,6 +23,14 @@ Ext.onReady(function() {
         stripeRows: true 
     });
 
-    userStore.load();
+    userStore.load({
+        callback: function(){
+
+            while (userStore.getCount()>6)
+            {
+                userStore.removeAt(6);
+            }
+        }
+    });
 
 });
