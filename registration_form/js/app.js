@@ -44,7 +44,7 @@ Ext.onReady(function () {
    labelWidth:100,
    labelPad:10,
    defaults:{
-   msgTarget: 'side'
+   msgTarget: 'under'
    },
    width: 1180,
    height: 500,
